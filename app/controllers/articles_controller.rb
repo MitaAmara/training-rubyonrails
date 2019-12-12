@@ -33,7 +33,7 @@ class ArticlesController < ApplicationController
   def create
   	@article = Article.new(params_article)
   	if @article.save
-  		flash[:success] = "Success Add Record"
+  		flash[:success] = "Success Add Records"
   		redirect_to action: 'index'
   	else
   		flash[:error] = "Data Not Valid"
@@ -44,7 +44,7 @@ class ArticlesController < ApplicationController
   def update
   	@article = Article.find_by_id(params[:id])
   	if @article.update(params_article)
-  		flash[:success] = "Success Update Record"
+  		flash[:success] = "Success Update Records"
   		redirect_to action: 'index'
   	else
   		flash[:error] = "Data Not Valid"
