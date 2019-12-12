@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-body">
+	<h3>Input Article</h3>
+	<%= form_for @article do |f| %>
+	  <table>
+	  	<tr>
+		<th><%= f.label :title %></th>
+		<td><%= f.text_field :title %></td>
+		</tr>
+		<tr>
+		<th><%= f.label :content %></th>
+		<td><%= f.text_area :content, cols: 20, rows: 10 %></td>
+		<%= @article.errors[:title].first unless @article.errors[:title].blank? %>
+		</tr>
+		<tr>
+		<th><%= f.label :status %></th>
+		<td><%= f.radio_button :status, "Rilis" %>
+		<%= label :article_status, 'Rilis' %>
+		<%= f.radio_button :status, "Belum Rilis", :checked => true %>
+		<%= label :article_status, 'Belum Rilis' %></td>
+		</tr>
+		<tr>
+		<th><%= f.submit :Submit, :class => 'btn btn-primary' %></th>
+		</tr>
+	  </table>
+	<% end %>
+  </div>
+</div>
+
+<p><%= link_to 'Back', articles_path, :class => 'btn btn-primary btn-block' %></p>

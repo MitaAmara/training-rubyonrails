@@ -1,3 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'homes#index'
+  get "sign_up" => "users#new", :as => "sign_up"
+  resources :users
+  resources :articles do
+  	resources :comments
+  end
+  resources :sessions
+  get 'contacts/index'
+  get 'contacts/new'
+  post '/contacts', to: 'contacts#create'
 end

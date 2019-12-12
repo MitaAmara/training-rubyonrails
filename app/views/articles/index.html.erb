@@ -1,0 +1,23 @@
+<div class="jumbotron text-center">
+  <h1>List Articles</h1>
+  <p>List of articles in your database</p>
+</div>
+<%= link_to 'New Article', new_article_path, :class => 'btn btn-primary btn-block' %>
+
+<br />
+
+<div id="row">
+  <form id="get_search" class="text-center">
+	<div class="form-group">
+	  <input type="search" name="search" class="form-control-md" placeholder="Type here to search" aria-label="Search" id="search">
+	  <input type="button" class="btn btn-sm btn-outline-info" onClick="submitFrmAjax();" value="Search">
+	  </div>
+  </form>
+</div>
+
+<div class="row" id="article_list">
+  <%= render @articles %>
+</div>
+<br />
+<%= paginate @articles, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm", nav_class: "d-flex flex-row-reverse" %>
+<%= javascript_include_tag 'custom' %>

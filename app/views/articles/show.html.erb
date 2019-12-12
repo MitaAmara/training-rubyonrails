@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-body">
+	<h3><%= @article.title %></h3>
+	<p><%= @article.content %></p>
+  </div>
+</div>
+
+<div id="form-comment">
+    <%= render 'comments/form' %>
+</div>
+
+<h4>Here the comments</h4>
+
+<div id="list-comments">
+    <%= render 'comments/comments' %>
+</div>
+
+<br />
+
+<p><%= link_to 'Back', articles_path, :class => 'btn btn-primary btn-block' %></p>

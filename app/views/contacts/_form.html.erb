@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-body">
+	<h3>Contact Us</h3>
+	<%= form_for @contact do |f| %>
+	  <table>
+	  	<tr>
+	  	<th><%= f.label :name %></th>
+		<td><%= f.text_field :name %></td>
+		</tr>
+		<tr>
+		<th><%= f.label :email %></th>
+		<td><%= f.text_field :email %></td>
+		</tr>
+		<tr>
+		<th><%= f.label :message %></th>
+		<td><%= f.text_area :message, cols: 30, rows: 10 %></td>
+		</tr>
+		<tr>
+		<th><%= f.submit :Submit, :class => 'btn btn-primary' %></th>
+		</tr>
+	  </table>
+	<% end %>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<!-- <div class="post-preview">
+  <a href="<%= article_path(article) %>">
+    <h2 class="post-title">
+      <%= article.title %>
+    </h2>
+    <h3 class="post-subtitle">
+      <%= article.content %>
+    </h3>
+  </a>
+  <p class="post-meta">Posted by
+    <a href="#">User</a>
+  </p>
+</div> -->
+<div class="card col-md">
+  <div class="card-body">
+	<h3><%= article.title %></h3>
+	<p><%= article.content.truncate(10) %></p>
+	<%= link_to 'Read more', article_path(article.id) %>
+	<h6>status : <%= article.status %></h6>
+	<span><%= link_to 'Edit', edit_article_path(article.id), :class => 'btn btn-primary btn-sm' %></span>
+	<span><%= link_to 'Delete', article_path(article.id), method:"DELETE", data:{confirm: 'Delete this data ?'}, :class => 'btn btn-primary btn-sm' %></span>
+  </div>
+</div>

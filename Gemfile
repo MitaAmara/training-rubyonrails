@@ -26,12 +26,24 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt-ruby', require: 'bcrypt'
+gem 'humanizer'
+
+# Use Pagination with kaminari
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# Use JQuery
+gem 'jquery-rails'
+
+# Use Bootstrap
+gem 'bootstrap', '~> 4.3.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
